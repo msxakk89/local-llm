@@ -14,7 +14,8 @@ router.post("/chat", async (req, res) => {
   res.setHeader("Transfer-Encoding", "chunked");
 
   const response = await ollama.chat({
-    model: process.env.OLLAMA_MODEL ?? "llama3",
+    //model: process.env.OLLAMA_MODEL ?? "llama3",
+    model: "deepseek-r1:1.5b",
     messages: [{ role: "user", content: body.message }],
     stream: true,
   });
